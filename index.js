@@ -154,9 +154,21 @@ const backFlipAll = () => {
     } 
 }
 // 페이지가 로드 됐을 때 실행되는 함수, 오버라이딩
-onload = () => {
+onload = async () => {
     const start = new Date()
     startTime = start.getTime()
+
+    // 람다로부터 랜덤 카드 결과 받아오기
+    const response = await fetch("https://moy6dkppye.execute-api.ap-northeast-2.amazonaws.com/card-flip-gaem-gateway/randomize");
+    const data = await response.json();
+    const shuffledCards = JSON.parse(data.body).shuffled;
+
+    // cardArray 업데이트
+    for (let i = 0; i < cardArray.length; i++) {
+        cardArray[i].name = shuffledCards[i].name;
+        cardArray[i].img = shuffledCards[i].img;
+    }
+
     getGameDOM();
     cardArray.sort(() => 0.5 - Math.random())
     setIDtoCardArray()
