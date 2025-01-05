@@ -17,3 +17,5 @@
 
 - 본 과제에서는 Term Project 1의 일부 가능을 Serverless Architecture로 구현하는 과정을 수행함
 - 주된 목표는 서버리스 아키텍처의 동작 원리와 구현 과정을 이해하며, AWS Lambda를 활용한 서버리스 배포를 경험하는 것임
+- [PA2 브랜치](https://github.com/yesjuhee/aws-migration/tree/lambda)
+- [PA2 레포트](https://github.com/yesjuhee/aws-migration/blob/lambda/report/REPORT.md)
